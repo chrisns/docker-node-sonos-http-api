@@ -19,7 +19,7 @@ echo {} > settings/settings.json
 Then run the docker image
 ```shell
 docker run \
-  -p 5005:5005 \
+  --net=host \
   --name sonos \
   --restart=always \
   -d \

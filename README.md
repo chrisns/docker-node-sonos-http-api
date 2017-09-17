@@ -38,3 +38,7 @@ docker run \
   -v `pwd`/presets:/app/presets \
   chrisns/docker-node-sonos-http-api 
 ```
+
+If you want to run in a swarm see an example setup here: https://github.com/pinked/clustered_sonos the important thing really here is using the host networking interface so that it can discover your sonos
+
+If you're looking this as part of a bigger home automation piece you might also want to look at [my MQTT hack job](https://github.com/chrisns/sonos-mqtt)

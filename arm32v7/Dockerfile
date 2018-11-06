@@ -1,4 +1,4 @@
-FROM resin/raspberrypi3-node:latest
+FROM resin/raspberrypi3-node:6
 
 RUN [ "cross-build-start" ]
 

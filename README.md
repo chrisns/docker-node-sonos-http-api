@@ -36,9 +36,14 @@ docker run \
   -v `pwd`/clips:/app/static/clips \
   -v `pwd`/cache:/app/cache \
   -v `pwd`/presets:/app/presets \
-  chrisns/docker-node-sonos-http-api 
+  chrisns/docker-node-sonos-http-api
 ```
 
-If you want to run in a swarm see an example setup here: https://github.com/pinked/clustered_sonos the important thing really here is using the host networking interface so that it can discover your sonos
+If you want to run in a swarm see an example setup here: https://github.com/pinked/clustered_sonos the important thing really here is using the host networking interface so that it can discover your Sonos devices.
 
-If you're looking this as part of a bigger home automation piece you might also want to look at [my MQTT hack job](https://github.com/chrisns/sonos-mqtt)
+If you're looking this as part of a bigger home automation piece you might also want to look at [my MQTT hack job](https://github.com/chrisns/sonos-mqtt).
+
+To build a Docker image suitable for use on arm32v7 (e.g., later Raspberry Pi devices), use 'Dockerfile.arm32v7' to build the image. For example
+```shell
+docker build . -f Dockerfile.arm32v7
+```

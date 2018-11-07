@@ -43,7 +43,4 @@ If you want to run in a swarm see an example setup here: https://github.com/pink
 
 If you're looking this as part of a bigger home automation piece you might also want to look at [my MQTT hack job](https://github.com/chrisns/sonos-mqtt).
 
-To build a Docker image suitable for use on arm32v7 (e.g., later Raspberry Pi devices), use 'Dockerfile.arm32v7' to build the image. For example
-```shell
-docker build . -f Dockerfile.arm32v7
-```
+The Dockerfile in the `arm32v7` directory can be used to build images suitable for later Raspberry Pis, with the builds performed on x86 platforms such as Docker Hub.

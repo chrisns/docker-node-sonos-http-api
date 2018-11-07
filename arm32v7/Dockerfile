@@ -1,8 +1,11 @@
+# Dockerfile that will build an arm32v7 image on an x86 build host
+
 FROM resin/raspberrypi3-node:6
+# Resin base image required for cross-build capabilities
 
 WORKDIR /app
 
-### Run commands within QEMU ARM emulation
+### Run commands within QEMU ARM cross-build emulation
 RUN [ "cross-build-start" ]
 
 RUN adduser --disabled-password --gecos "" node

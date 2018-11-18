@@ -15,7 +15,7 @@ Docker wrapper for https://github.com/jishi/node-sonos-http-api
 ## Usage
 Refer to https://github.com/jishi/node-sonos-http-api for all the configuration detail
 
-First make the config and local dirs up
+First create the local directories and the settings file:
 ```shell
 mkdir clips
 mkdir settings
@@ -25,7 +25,7 @@ curl https://raw.githubusercontent.com/jishi/node-sonos-http-api/master/presets/
 echo {} > settings/settings.json
 ```
 
-Then run the docker image
+Then run the docker image:
 ```shell
 docker run \
   --net=host \
@@ -36,9 +36,11 @@ docker run \
   -v `pwd`/clips:/app/static/clips \
   -v `pwd`/cache:/app/cache \
   -v `pwd`/presets:/app/presets \
-  chrisns/docker-node-sonos-http-api 
+  chrisns/docker-node-sonos-http-api
 ```
 
-If you want to run in a swarm see an example setup here: https://github.com/pinked/clustered_sonos the important thing really here is using the host networking interface so that it can discover your sonos
+If you want to run in a swarm see an example setup here: https://github.com/pinked/clustered_sonos. The important thing is using the *host* networking interface so that it can discover your Sonos devices.
 
-If you're looking this as part of a bigger home automation piece you might also want to look at [my MQTT hack job](https://github.com/chrisns/sonos-mqtt)
+If you're looking this as part of a bigger home automation piece you might also want to look at [my MQTT hack job](https://github.com/chrisns/sonos-mqtt).
+
+The Dockerfiles in the `arm32v7-nativebuild` and `arm32v7-crossbuild` directories can be used to build arm32v7 images suitable for later Raspberry Pi devices. The *nativebuild* version is for docker builds on ARM devices while the *crossbuild* version is for docker builds on x86 hosts (e.g., including automated builds on Docker Hub).

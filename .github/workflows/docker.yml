@@ -15,9 +15,6 @@ jobs:
           buildx-version: latest
           qemu-version: latest
 
-      - name: Build
-        run: docker build -t ${GITHUB_REPOSITORY}:latest .
-
       - name: Docker login
         env:
           docker_username: ${{ secrets.docker_username }}

@@ -11,9 +11,6 @@ jobs:
           submodules: true
 
       - uses: crazy-max/ghaction-docker-buildx@v1
-        with:
-          buildx-version: latest
-          qemu-version: latest
 
       - name: Docker login
         env:

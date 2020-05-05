@@ -1,0 +1,17 @@
+version: 1
+
+update_configs:
+  - package_manager: "docker"
+    directory: "/"
+    update_schedule: "daily"
+    automerged_updates:
+      - match:
+          dependency_type: "all"
+          update_type: security:patch
+  - package_manager: "submodules"
+    directory: "/"
+    update_schedule: "daily"
+    automerged_updates:
+      - match:
+          dependency_type: "all"
+          update_type: all

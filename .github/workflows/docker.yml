@@ -22,23 +22,12 @@ jobs:
         run: docker login  -u $docker_username -p ${docker_password}
 
       - name: Run Buildx
-        run: |
-          docker buildx build \
-            --platform linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/ppc64le,linux/s390x \
-            -t ${GITHUB_REPOSITORY}:sha-${GITHUB_SHA} --push .
-      # - name: buildx
-      #   run: |
-      #     docker buildx create --name mybuilder
-      #     docker buildx use mybuilder
-      #     docker buildx inspect --bootstrap
-      #     docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7,linux/arm/v6,linux/386, . \
-      #      -t ${GITHUB_REPOSITORY}:sha-${GITHUB_SHA} --push
-      #   env:
-      #     DOCKER_CLI_EXPERIMENTAL: enabled
-      # - name: Tag
-      #   run: docker tag ${GITHUB_REPOSITORY}:latest ${GITHUB_REPOSITORY}:${GITHUB_SHA}
-      # - name: Push latest
-      #   if: github.ref == 'refs/heads/master'
-      #   run: docker push ${GITHUB_REPOSITORY}:latest
-      # - name: Push sha
-      # run: docker push ${GITHUB_REPOSITORY}:${GITHUB_SHA}
+        run: docker buildx build \
+          --platform linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/ppc64le,linux/s390x \
+          -t ${GITHUB_REPOSITORY}:sha-${GITHUB_SHA} --push .
+
+      - name: Push latest
+        if: github.ref == 'refs/heads/master'
+        run: docker buildx build \
+          --platform linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/ppc64le,linux/s390x \
+          -t ${GITHUB_REPOSITORY}:latest --push .

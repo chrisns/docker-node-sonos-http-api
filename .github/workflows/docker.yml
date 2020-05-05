@@ -1,0 +1,32 @@
+name: Docker Image CI
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+        with:
+          submodules: true
+
+      - uses: crazy-max/ghaction-docker-buildx@v1
+
+      - name: Docker login
+        env:
+          docker_username: ${{ secrets.docker_username }}
+          docker_password: ${{ secrets.docker_password }}
+        run: docker login  -u $docker_username -p ${docker_password}
+
+      - name: Run Buildx
+        run: |
+          docker buildx build \
+          --platform linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/ppc64le,linux/s390x \
+          -t ${GITHUB_REPOSITORY}:sha-${GITHUB_SHA} --push .
+
+      - name: Push latest
+        if: github.ref == 'refs/heads/master'
+        run: |
+          docker buildx build \
+          --platform linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/ppc64le,linux/s390x \
+          -t ${GITHUB_REPOSITORY}:latest --push .

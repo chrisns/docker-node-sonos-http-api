@@ -4,11 +4,13 @@ WORKDIR /app
 
 COPY node-sonos /app
 
-RUN mkdir cache && \
-  ln -s settings/settings.json && \
-  chown -R node:node static cache && \
-  npm install --production && \
-  rm -rf /tmp/* /root/.npm
+RUN apk upgrade --no-cache -U && \
+    apk add --no-cache curl && \
+    mkdir cache && \
+    ln -s settings/settings.json && \
+    chown -R node:node static cache && \
+    npm install --production && \
+    rm -rf /tmp/* /root/.npm
 
 EXPOSE 5005
 

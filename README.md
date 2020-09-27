@@ -43,5 +43,3 @@ docker run \
 If you want to run in a swarm see an example setup here: https://github.com/pinked/clustered_sonos. The important thing is using the *host* networking interface so that it can discover your Sonos devices.
 
 If you're looking this as part of a bigger home automation piece you might also want to look at [my MQTT hack job](https://github.com/chrisns/sonos-mqtt).
-
-The Dockerfiles in the `arm32v7-nativebuild` and `arm32v7-crossbuild` directories can be used to build arm32v7 images suitable for later Raspberry Pi devices. The *nativebuild* version is for docker builds on ARM devices while the *crossbuild* version is for docker builds on x86 hosts (e.g., including automated builds on Docker Hub).

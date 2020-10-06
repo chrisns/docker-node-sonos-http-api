@@ -12,7 +12,7 @@ jobs:
         with:
           submodules: true
 
-      - uses: crazy-max/ghaction-docker-buildx@v1
+      - uses: docker/setup-buildx-action@v1
 
       - name: Docker login
         env:

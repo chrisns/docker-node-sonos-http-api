@@ -23,7 +23,7 @@ jobs:
 
       - uses: docker/setup-buildx-action@v1
 
-      - uses: docker/setup-qemu-action@v1
+      - uses: docker/setup-qemu-action@v1.1.0
 
       - name: build+push
         uses: docker/build-push-action@v2

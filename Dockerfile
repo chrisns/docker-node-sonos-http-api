@@ -6,7 +6,6 @@ COPY node-sonos /app
 
 RUN apk add --no-cache curl && \
   mkdir cache && \
-  ln -s settings/settings.json && \
   chown -R node:node static cache && \
   npm install --production && \
   rm -rf /tmp/* /root/.npm

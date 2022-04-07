@@ -3,7 +3,46 @@ on: [push]
 
 jobs:
   build:
-    uses: chrisns/repo-config/.github/workflows/dockerbuild.yml@main
-    with:
-      platforms: linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/ppc64le,linux/s390x
-      DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2.4.0
+        with:
+          submodules: true
+      - uses: docker/setup-buildx-action@v1.6.0
+      - uses: docker/setup-qemu-action@v1.2.0
+
+      - name: Login to dockerhub
+        if: github.ref == 'refs/heads/master'
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Login to GitHub
+        if: github.ref == 'refs/heads/master'
+        uses: docker/login-action@v1.12.0
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - id: docker_meta
+        uses: docker/metadata-action@v3.6.2
+        with:
+          images: |
+            ghcr.io/${{ github.repository }}
+            ${{ github.repository }}
+          flavor: |
+            latest=true
+          tags: |
+            type=sha,format=long
+            type=edge,branch=$repo.default_branch
+
+      - name: build+push
+        uses: docker/build-push-action@v2.8.0
+        with:
+          platforms: linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/ppc64le,linux/s390x
+          push: ${{ github.ref == 'refs/heads/master' }}
+          tags: ${{ steps.docker_meta.outputs.tags }}
+          labels: ${{ steps.docker_meta.outputs.labels }}

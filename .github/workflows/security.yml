@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@dcd71f646680f2efd8db4afa5ad64fdcba30e748
       with:
         fetch-depth: 2
     - name: Initialize CodeQL
@@ -27,7 +27,7 @@ jobs:
   ShiftLeft:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@dcd71f646680f2efd8db4afa5ad64fdcba30e748
     - name: Perform ShiftLeft Scan
       uses: ShiftLeftSecurity/scan-action@master
       env:

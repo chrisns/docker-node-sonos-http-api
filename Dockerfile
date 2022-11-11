@@ -1,4 +1,4 @@
-FROM node:18.12.1-alpine@sha256:ae6cf743c4c290423e163d8a85db7a08b831aace7e2486e857147f78f0cc34d3
+FROM node:18.12.1-alpine@sha256:3dd8ee60d51e0bd5b39a9f23074015f4ea4948f998c24e5bdc4039377dfe8cf6
 
 WORKDIR /app
 

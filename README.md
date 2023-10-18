@@ -8,9 +8,6 @@ Docker wrapper for https://github.com/jishi/node-sonos-http-api
 [![Docker Stars](https://img.shields.io/docker/stars/chrisns/docker-node-sonos-http-api.svg)](https://hub.docker.com/r/chrisns/docker-node-sonos-http-api)
 [![Docker Pulls](https://img.shields.io/docker/pulls/chrisns/docker-node-sonos-http-api.svg)](https://hub.docker.com/r/chrisns/docker-node-sonos-http-api)
 [![Docker Automated buil](https://img.shields.io/docker/automated/chrisns/docker-node-sonos-http-api.svg)](https://hub.docker.com/r/chrisns/docker-node-sonos-http-api)
-[![Docker Build Statu](https://img.shields.io/docker/build/chrisns/docker-node-sonos-http-api.svg)](https://hub.docker.com/r/chrisns/docker-node-sonos-http-api)
-[![ImageLayers Size](https://img.shields.io/imagelayers/image-size/chrisns/docker-node-sonos-http-api/latest.svg)](https://hub.docker.com/r/chrisns/docker-node-sonos-http-api)
-[![ImageLayers Layers](https://img.shields.io/imagelayers/layers/chrisns/docker-node-sonos-http-api/latest.svg)](https://hub.docker.com/r/chrisns/docker-node-sonos-http-api)
 ![Docker Image CI](https://github.com/chrisns/docker-node-sonos-http-api/workflows/Docker%20Image%20CI/badge.svg?branch=master)
 
 ## Usage

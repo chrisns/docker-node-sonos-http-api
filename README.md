@@ -7,7 +7,7 @@ Docker wrapper for https://github.com/jishi/node-sonos-http-api
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/chrisns/docker-node-sonos-http-api/master/LICENSE)
 [![Docker Stars](https://img.shields.io/docker/stars/chrisns/docker-node-sonos-http-api.svg)](https://hub.docker.com/r/chrisns/docker-node-sonos-http-api)
 [![Docker Pulls](https://img.shields.io/docker/pulls/chrisns/docker-node-sonos-http-api.svg)](https://hub.docker.com/r/chrisns/docker-node-sonos-http-api)
-[![Docker Automated buil](https://img.shields.io/docker/automated/chrisns/docker-node-sonos-http-api.svg)](https://hub.docker.com/r/chrisns/docker-node-sonos-http-api)
+[![Docker Automated build](https://img.shields.io/docker/automated/chrisns/docker-node-sonos-http-api.svg)](https://hub.docker.com/r/chrisns/docker-node-sonos-http-api)
 ![Docker Image CI](https://github.com/chrisns/docker-node-sonos-http-api/workflows/Docker%20Image%20CI/badge.svg?branch=master)
 
 ## Usage

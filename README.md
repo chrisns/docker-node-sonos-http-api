@@ -4,11 +4,11 @@ Docker wrapper for https://github.com/jishi/node-sonos-http-api
 [![GitHub issues](https://img.shields.io/github/issues/chrisns/docker-node-sonos-http-api.svg)](https://github.com/chrisns/docker-node-sonos-http-api/issues)
 [![GitHub forks](https://img.shields.io/github/forks/chrisns/docker-node-sonos-http-api.svg)](https://github.com/chrisns/docker-node-sonos-http-api/network)
 [![GitHub stars](https://img.shields.io/github/stars/chrisns/docker-node-sonos-http-api.svg)](https://github.com/chrisns/docker-node-sonos-http-api/stargazers)
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/chrisns/docker-node-sonos-http-api/master/LICENSE)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/chrisns/docker-node-sonos-http-api/main/LICENSE)
 [![Docker Stars](https://img.shields.io/docker/stars/chrisns/docker-node-sonos-http-api.svg)](https://hub.docker.com/r/chrisns/docker-node-sonos-http-api)
 [![Docker Pulls](https://img.shields.io/docker/pulls/chrisns/docker-node-sonos-http-api.svg)](https://hub.docker.com/r/chrisns/docker-node-sonos-http-api)
 [![Docker Automated build](https://img.shields.io/docker/automated/chrisns/docker-node-sonos-http-api.svg)](https://hub.docker.com/r/chrisns/docker-node-sonos-http-api)
-![Docker Image CI](https://github.com/chrisns/docker-node-sonos-http-api/workflows/Docker%20Image%20CI/badge.svg?branch=master)
+![Docker Image CI](https://github.com/chrisns/docker-node-sonos-http-api/workflows/Docker%20Image%20CI/badge.svg?branch=main)
 
 ## Usage
 Refer to https://github.com/jishi/node-sonos-http-api for all the configuration detail

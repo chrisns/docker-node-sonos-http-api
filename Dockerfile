@@ -12,6 +12,8 @@ RUN apk add --no-cache curl && \
 
 EXPOSE 5005
 
+ENV NODE_OPTIONS=--openssl-legacy-provider
+
 USER node
 
 HEALTHCHECK --interval=1m --timeout=2s \
